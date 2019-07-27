@@ -25,16 +25,18 @@ class SingleMovie extends Component {
     return (
       <div>
         {movie ? (
-          <div className="container">
-            <img src={`${config.imageUrl}${movie.poster_path}`} alt='movie' />
-            <div >Title: {movie.title}</div>
-            <div>Original Title: {movie.original_title} <span>(ID:{movie.id})</span> </div>
-            <h5 className="purple-text text-darken-3"><strong> Star: {movie.vote_average}</strong></h5>
-            <div className="purple-text text-darken-3">Status: {movie.status}</div>
-            <p>Movie Overview:{movie.overview} </p>
-            <Link to='/'>
-              <button className ='btn'>Back to Home</button>
-            </Link>
+          <div className='grey darken-3 lime-text text-darken-2'>
+            <div className="container ">
+              <img src={`${config.imageUrl}${movie.poster_path}`} alt='movie' />
+              <div >Title: {movie.title}</div>
+              <div>Original Title: {movie.original_title} <span>(ID:{movie.id})</span> </div>
+              <h5><strong><i className="material-icons">thumb_up</i> : {movie.vote_average}</strong></h5>
+              <div>Status: {movie.status}</div>
+              <p>Movie Overview:{movie.overview} </p>
+              <Link to='/'>
+                <button className='btn lime darken-2 section black-text'>Back to Home</button>
+              </Link>
+            </div>
           </div>
         ) : (
           <Spinner />

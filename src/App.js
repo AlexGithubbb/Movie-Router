@@ -7,7 +7,7 @@ import SingleMovie from './SingleMovie';
 function App() {
   return (
       <Router>
-        <div className="App">
+      <div className="App">
         <Route exact path='/' component={Home} />
         <Route path='/movie/:movieId' component={SingleMovie} />
         </div>
@@ -16,8 +16,6 @@ function App() {
 }
 
 export default App;
-
-
 
 // https://api.themoviedb.org/3/movie/550?api_key=4dac77c42f2dcbeb90b2a72682d71a10
 

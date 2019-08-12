@@ -31,8 +31,7 @@ class Home extends Component {
       );
     });
     return (
- 
-        <div className='row'>
+      <div className='row'>
           {movies}
         </div>
 

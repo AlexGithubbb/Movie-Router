@@ -13,7 +13,11 @@ const Movie = (props) => {
         <div className='card-content black '>
           {/* <p>{props.content}</p> */}
           <span className='card-title green-text text-accent-2'>
-            <strong>{props.title.slice(0, 25)}</strong>
+            <strong>
+            {props.title.length > 15 ? 
+           `${props.title.toUpperCase().slice(0, 20)}...` : 
+           props.title.toUpperCase()}
+            </strong>
           </span>
         </div>
         <div className='card-action grey darken-1' style={{ padding: '2px 4px' }}>

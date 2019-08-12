@@ -28,7 +28,7 @@ class SingleMovie extends Component {
           <div className='grey darken-3 lime-text text-darken-2'>
             <div className="container ">
               <img src={`${config.imageUrl}${movie.poster_path}`} alt='movie' />
-              <div >Title: {movie.title}</div>
+              <div >Title: {movie.title.toUpperCase()}</div>
               <div>Original Title: {movie.original_title} <span>(ID:{movie.id})</span> </div>
               <h5><strong><i className="material-icons">thumb_up</i> : {movie.vote_average}</strong></h5>
               <div>Status: {movie.status}</div>

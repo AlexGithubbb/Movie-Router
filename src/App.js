@@ -1,17 +1,21 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
-import SingleMovie from './SingleMovie';
+import MovieDetail from './MovieDetail';
+import Lost from './Lost';
 
 function App() {
   return (
-      <Router>
-      <div className="App">
-        <Route exact path='/' component={Home} />
-        <Route path='/movie/:movieId' component={SingleMovie} />
-        </div>
-      </Router>
+    <Router>
+      <div className='App'>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/movie/:movieId' component={MovieDetail} />
+          <Route component={Lost} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
@@ -23,4 +27,3 @@ export default App;
 // const singleMovieUrl = "https://api.themoviedb.org/3/movie/"
 // const nowPlayingUrl = "https://api.themoviedb.org/3/movie/now_playing";
 // const imageUrl = "http://image.tmdb.org/t/p/w300";
-

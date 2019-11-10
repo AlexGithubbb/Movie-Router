@@ -1,27 +1,26 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import config from './config';
-import Movies from './Movies';
+import Movie from './Movie';
 // import { BrowserRouter as Router, Route } from 'react-router-dom';
-
 
 class Home extends Component {
   state = {
-    movieLsit: []
+    movieData: []
   };
   componentDidMount() {
     axios
       .get(`${config.nowPlayingUrl}?api_key=${config.apiKey}`)
       .then(response => {
         const movieData = response.data.results;
-        this.setState({ movieLsit: movieData });
+        this.setState({ movieData });
       })
       .catch(err => console.log(err));
   }
   render() {
-    const movies = this.state.movieLsit.map((movie, i) => {
+    const movies = this.state.movieData.map((movie, i) => {
       return (
-        <Movies
+        <Movie
           key={i}
           title={movie.title}
           image={`${config.imageUrl}${movie.poster_path}`}
@@ -30,12 +29,7 @@ class Home extends Component {
         />
       );
     });
-    return (
-      <div className='row'>
-          {movies}
-        </div>
-
-    );
+    return <div className='row'>{movies}</div>;
   }
 }
 
